@@ -1,24 +1,40 @@
 :root {
-  --color-blue-1: #0E51A7;
-  --color-blue-2: #274D7E;
-  --color-blue-3: #05326D;
-  --color-blue-4: #4282D3;
-  --color-blue-5: #6997D3;
+  --color-blue-1: #0e51a7;
+  --color-blue-2: #274d7e;
+  --color-blue-3: #05326d;
+  --color-blue-4: #4282d3;
+  --color-blue-5: #6997d3;
   --color-blue-6: #6997d360;
   --color-blue-7: #001d3d;
   --color-blue-8: #0d0c1d;
 
   --color-black-1: #00031e;
-  
+
+  --color-dark-1: #141414;
+  --color-dark-2: #2a2a2a;
+  --color-dark-3: #212121;
+  --color-dark-4: #00031e;
+
   --color-gray-1: #646464;
+  --color-gray-2: #9a9a9a;
 
   --color-yellow-1: #fca311;
+  --color-yellow-2: #ffe600;
+
+  --color-green-1: #08b116;
+
+  --color-blue-1: #0125f0;
+
+  --color-red-1: #e90e0e;
 
   --color-white: #fff;
   --color-black: #000;
+
+  --width-sidebar: 20%;
+  --hight-header: 100px;
 }
 body {
   margin: 0;
   font-family: 'GT Eesti Pro Text';
-  background-color: #f0f0f0;
+  background-color: var(--color-dark-3);
 }
