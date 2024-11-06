@@ -1,3 +1,14 @@
 .page {
   background-color: var(--color-dark-3);
 }
+
+.content {
+  width: calc(100% - var(--width-sidebar) - 150px);
+  margin-left: calc(var(--width-sidebar) + 20px);
+  padding-top: var(--hight-header);
+  height: 10px;
+}
+
+.panel {
+  margin-bottom: 10px;
+}

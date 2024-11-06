@@ -38,3 +38,15 @@ body {
   font-family: 'GT Eesti Pro Text';
   background-color: var(--color-dark-3);
 }
+
+p {
+  letter-spacing: 0.05rem;
+}
+a {
+  color: var(--color-white);
+  cursor: pointer;
+}
+a:hover {
+  color: var(--color-white);
+  cursor: pointer;
+}

@@ -26,3 +26,23 @@
   width: 500px;
   height: 7px;
 }
+
+.panel_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.w60 {
+  width: 60%;
+  margin-right: 10px;
+}
+
+.video_demo {
+  width: 400px;
+  border-radius: 8px;
+
+  -webkit-box-shadow: 0px 1px 15px 5px rgba(255, 255, 255, 0.8);
+  -moz-box-shadow: 0px 1px 15px 5px rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 1px 15px 5px rgba(255, 255, 255, 0.8);
+}
