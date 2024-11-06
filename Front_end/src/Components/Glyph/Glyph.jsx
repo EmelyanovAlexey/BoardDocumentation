@@ -56,6 +56,8 @@ Glyph.propTypes = {
     'Result',
     'Post',
     'Description',
+    'Windows',
+    'Linux',
   ]).isRequired,
 
   /**

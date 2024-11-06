@@ -24,25 +24,25 @@ export const ROUTER_LIST_DOCUMENTATION = [
     id: 'description',
     title: 'Описание',
     href: '/documentation/description',
-    icon: 'Home',
+    icon: 'Burger',
   },
   {
     id: 'instruction_user',
     title: 'Инструкция для пользователя',
     href: '/documentation/instruction_user',
-    icon: 'Home',
+    icon: 'Post',
   },
   {
     id: 'instruction_work',
     title: 'Инструкция для разработчика',
     href: '/documentation/instruction_work',
-    icon: 'Home',
+    icon: 'Post',
   },
   {
     id: 'api',
     title: 'API',
     href: '/documentation/api',
-    icon: 'Home',
+    icon: 'Api',
   },
 ];
 
