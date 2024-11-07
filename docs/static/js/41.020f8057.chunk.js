@@ -1,2 +1,0 @@
-(this.webpackJsonp8158=this.webpackJsonp8158||[]).push([[41],{117:function(t,e,s){"use strict";s.r(e);s(1);var i=s(0);e.default=function(){return Object(i.jsx)("svg",{width:"14",height:"3",viewBox:"0 0 14 3",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:Object(i.jsx)("path",{d:"M0 1.5H14",stroke:"#003c7c",strokeWidth:"2",strokeMiterlimit:"10"})})}}}]);
-//# sourceMappingURL=41.020f8057.chunk.js.map
