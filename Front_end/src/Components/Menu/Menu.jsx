@@ -12,7 +12,7 @@ function Menu({ className }) {
     <div className={clsx([styles.root, className])}>
       <div className={styles.content}>
         <div className={styles.logo}>
-          <img src="../../../Img/logo.png" alt="logo" />
+          <img src="./Img/logo.png" alt="logo" />
         </div>
         <div className={styles.menu}>
           {ROUTER_LIST.map((link) => (
