@@ -14,6 +14,7 @@ import './index.css';
 function initializeApplication() {
   const history = createBrowserHistory('/home');
   const store = configureStore(history, createAPIHost());
+
   ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>

@@ -19,12 +19,15 @@ import styles from './App.module.css';
 // export NODE_OPTIONS=--openssl-legacy-provider
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <StatusContainer />
 
       <Menu />
 
       <div className={styles.pages}>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
         <Route exact path="/home" render={() => <HomePageContainer />} />
         <Route exact path="/documentation">
           <Redirect to="/documentation/description" />
