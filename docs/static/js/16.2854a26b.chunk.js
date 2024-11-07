@@ -1,0 +1,2 @@
+(this.webpackJsonp8158=this.webpackJsonp8158||[]).push([[16],{139:function(t,e,s){"use strict";s.r(e);s(1);var i=s(0);e.default=function(){return Object(i.jsxs)("svg",{width:"14",height:"15",viewBox:"0 0 14 15",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[Object(i.jsx)("path",{d:"M0 7.5H14",stroke:"#003c7c",strokeWidth:"2",strokeMiterlimit:"10"}),Object(i.jsx)("path",{d:"M7 14.5V0.5",stroke:"#003c7c",strokeWidth:"2",strokeMiterlimit:"10"})]})}}}]);
+//# sourceMappingURL=16.2854a26b.chunk.js.map
