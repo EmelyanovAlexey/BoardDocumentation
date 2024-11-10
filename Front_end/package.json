@@ -1,7 +1,6 @@
 {
   "name": "8158",
   "version": "0.1.0",
-  "homepage": ".",
   "private": true,
   "dependencies": {
     "@babel/helper-plugin-utils": "7.14.5",

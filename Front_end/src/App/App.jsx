@@ -17,6 +17,7 @@ import InstructionWorkPage from '../Pages/InstructionWorkPage';
 import styles from './App.module.css';
 
 // export NODE_OPTIONS=--openssl-legacy-provider
+// "homepage": ".",
 function App() {
   return (
     <BrowserRouter basename="/">
