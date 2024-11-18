@@ -6,33 +6,38 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import Glyph from '../Glyph';
+import SearchBlockAll from '../../Containers/SearchBlockAll';
 
 import styles from './ContentSlider.module.css';
 
 function ContentSlider({ list }) {
   return (
-    <div className={styles.root}>
-      <div className={styles.logo}>
-        <img src="../../../Img/laser-beam.jpg" alt="logo" />
+    <>
+      <div className={styles.root}>
+        <div className={styles.logo}>
+          <img src="../../../Img/laser-beam.jpg" alt="logo" />
+        </div>
+
+        <div className={styles.list}>
+          {list.map((link) => (
+            <NavLink
+              key={link.id}
+              to={link.href}
+              className={styles.item_link}
+              activeClassName={styles.item_link_active}
+              end={link.href !== '/documentation'}
+            >
+              {link.icon !== undefined && (
+                <Glyph className={styles.icon} name={link.icon} />
+              )}
+              {link.title}
+            </NavLink>
+          ))}
+        </div>
       </div>
 
-      <div className={styles.list}>
-        {list.map((link) => (
-          <NavLink
-            key={link.id}
-            to={link.href}
-            className={styles.item_link}
-            activeClassName={styles.item_link_active}
-            end={link.href !== '/documentation'}
-          >
-            {link.icon !== undefined && (
-              <Glyph className={styles.icon} name={link.icon} />
-            )}
-            {link.title}
-          </NavLink>
-        ))}
-      </div>
-    </div>
+      <SearchBlockAll />
+    </>
   );
 }
 

@@ -17,6 +17,8 @@ function HomePage({ children }) {
       <div className={styles.sideBar}>{children}</div>
 
       <div className={styles.content}>
+        <a href="#panel_3">Перейти к Разделу 1</a>
+
         <Panel className={styles.panel} title="Виртуальная интерактивная доска">
           <p>
             В современном мире в большенстве школах имеют ограниченый бюджет для
@@ -35,7 +37,7 @@ function HomePage({ children }) {
           </p>
         </Panel>
 
-        <Panel className={styles.panel} title="Как это работает?">
+        <Panel className={styles.panel} title="Как это работает?" id="panel_2">
           <div className={styles.panel_content}>
             <div className={styles.w60}>
               <p>
@@ -89,7 +91,7 @@ function HomePage({ children }) {
           </div>
         </Panel>
 
-        <Panel className={styles.panel} title="Выбор цвета лазера">
+        <Panel className={styles.panel} title="Выбор цвета лазера" id="panel_3">
           <div className={styles.choose_color}>
             <ColorPickerСircle
               list={COLOR_LAYER}
