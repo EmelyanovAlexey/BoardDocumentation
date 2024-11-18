@@ -7,6 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 
 import main from './main';
+import search from './search';
 
 /**
  * Объединяет все саги из сторов
@@ -16,6 +17,7 @@ function* rootSaga(...args) {
   yield all([
     // Добавлять root саги из сторов ниже
     main.rootSaga(...args),
+    search.rootSaga(...args),
   ]);
 }
 
@@ -51,6 +53,7 @@ export default function configureStore(history, host) {
     router: connectRouter(history),
     // Добавлять редюсеры из сторов ниже
     main: main.reducer,
+    search: search.reducer,
   });
 
   const sagaMiddleware = createSagaMiddleware();

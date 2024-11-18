@@ -13,6 +13,7 @@ import HomePageContainer from '../Pages/HomePage/HomePageContainer';
 import DocumentationContainer from '../Pages/DocumentationPage';
 import InstructionUserPage from '../Pages/InstructionUserPage';
 import InstructionWorkPage from '../Pages/InstructionWorkPage';
+import SearchPageContainer from '../Pages/SearchPage/SearchPageContainer';
 
 import styles from './App.module.css';
 
@@ -58,6 +59,15 @@ function App() {
             <InstructionWorkPage>
               <DocumentationSidebar />
             </InstructionWorkPage>
+          )}
+        />
+        <Route
+          exact
+          path="/documentation/search"
+          render={() => (
+            <SearchPageContainer>
+              <DocumentationSidebar />
+            </SearchPageContainer>
           )}
         />
       </div>

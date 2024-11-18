@@ -44,6 +44,12 @@ export const ROUTER_LIST_DOCUMENTATION = [
     href: '/documentation/api',
     icon: 'Api',
   },
+  {
+    id: 'api',
+    title: 'ccccc',
+    href: '/documentation/search',
+    icon: 'Api',
+  },
 ];
 
 export const COLOR_LAYER = [

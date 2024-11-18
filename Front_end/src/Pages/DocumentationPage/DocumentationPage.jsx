@@ -17,8 +17,6 @@ function HomePage({ children }) {
       <div className={styles.sideBar}>{children}</div>
 
       <div className={styles.content}>
-        <a href="#panel_3">Перейти к Разделу 1</a>
-
         <Panel className={styles.panel} title="Виртуальная интерактивная доска">
           <p>
             В современном мире в большенстве школах имеют ограниченый бюджет для

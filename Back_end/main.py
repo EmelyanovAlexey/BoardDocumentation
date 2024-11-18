@@ -4,12 +4,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from sqlalchemy import select, insert, update, join, Integer
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.sql import func
+from sqlalchemy.sql import func, or_
 from jose import jwt, ExpiredSignatureError, JWTError
 from datetime import datetime, timezone
 
 # Models
-# from models.models import pages, kpi, users
+from Modele.models import pages
 from database import get_db
 
 # Старт
@@ -30,9 +30,29 @@ app.add_middleware(
 )
 
 # Поиск в БД по тексту
-# @app.get("/search")
-# def get_search_info():
-#     return getPost()
+@app.get("/search")
+async def search_articles(query: str, session: AsyncSession = Depends(get_db)):
+    stmt = (
+        select(pages.c.id, pages.c.title, pages.c.content)
+        .where(
+            or_(
+                pages.c.title.ilike(f"%{query}%"),  # Поиск в заголовке
+                pages.c.content.ilike(f"%{query}%")  # Поиск в тексте
+            )
+        )
+    )
+    
+    result = await session.execute(stmt)
+    articles_list = result.fetchall()
+
+    return [
+        {
+            "id": article[0],
+            "title": article[1],
+            "content": article[2],
+        }
+        for article in articles_list
+    ]
 
 # # получить пост по id
 # @app.get("/posts/{post_id}")

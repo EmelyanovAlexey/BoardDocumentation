@@ -1,21 +1,19 @@
 /* eslint-disable no-unused-vars */
 import { connect } from 'react-redux';
-// import { deleteStatusPageAction } from '../Store/main';
-
-import { ROUTER_LIST_DOCUMENTATION } from '../Shered/const';
+import { setTextAction } from '../Store/search';
 
 import SearchBlock from '../Components/SearchBlock';
 
-function mapStateToProps() {
+function mapStateToProps(state) {
   return {
-    list: ROUTER_LIST_DOCUMENTATION,
+    textSave: state.search.text,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClick: (data) => {
-      // dispatch(deleteStatusPageAction(data));
+    setTextAction: (data) => {
+      dispatch(setTextAction(data));
     },
   };
 }
