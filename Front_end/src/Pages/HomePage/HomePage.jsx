@@ -89,18 +89,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-
-      <div className={clsx([styles.section, styles.top_shadow])}>
-        <img
-          className={styles.fon}
-          src="../../../Img/fon_doc_1.png"
-          alt="fon_doc_1"
-        />
-
-        <div className={styles.section_conent}>
-          <div className={styles.title}>Экономичный продукт</div>
-        </div>
-      </div>
     </div>
   );
 }

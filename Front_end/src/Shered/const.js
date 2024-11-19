@@ -5,12 +5,12 @@ export const ROUTER_LIST = [
     href: '/home',
     icon: 'Home',
   },
-  {
-    id: 'order',
-    title: 'Заказы',
-    href: '/22',
-    icon: 'Home',
-  },
+  // {
+  //   id: 'order',
+  //   title: 'Заказы',
+  //   href: '/22',
+  //   icon: 'Home',
+  // },
   {
     id: 'documentation',
     title: 'Документация',
@@ -44,12 +44,12 @@ export const ROUTER_LIST_DOCUMENTATION = [
     href: '/documentation/api',
     icon: 'Api',
   },
-  {
-    id: 'api',
-    title: 'ccccc',
-    href: '/documentation/search',
-    icon: 'Api',
-  },
+  // {
+  //   id: 'api',
+  //   title: 'ccccc',
+  //   href: '/documentation/search',
+  //   icon: 'Api',
+  // },
 ];
 
 export const COLOR_LAYER = [

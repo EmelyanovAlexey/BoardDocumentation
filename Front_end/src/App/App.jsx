@@ -14,6 +14,7 @@ import DocumentationContainer from '../Pages/DocumentationPage';
 import InstructionUserPage from '../Pages/InstructionUserPage';
 import InstructionWorkPage from '../Pages/InstructionWorkPage';
 import SearchPageContainer from '../Pages/SearchPage/SearchPageContainer';
+import ApiPageContainer from '../Pages/ApiPage/ApiPageContainer';
 
 import styles from './App.module.css';
 
@@ -59,6 +60,15 @@ function App() {
             <InstructionWorkPage>
               <DocumentationSidebar />
             </InstructionWorkPage>
+          )}
+        />
+        <Route
+          exact
+          path="/documentation/api"
+          render={() => (
+            <ApiPageContainer>
+              <DocumentationSidebar />
+            </ApiPageContainer>
           )}
         />
         <Route
