@@ -1,7 +1,5 @@
 # BoardDocumentation
 
-# SearchPersonAI
-
 ---
 
 ### Описание
