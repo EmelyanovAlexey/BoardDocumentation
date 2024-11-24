@@ -115,3 +115,30 @@ video {
   transform: rotate(-20deg);
   height: 5px;
 }
+
+footer {
+  padding: 20px;
+  padding-top: 50px;
+  color: #fff;
+}
+.footer_content {
+  width: 80%;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.footer_label {
+  color: var(--color-gray-2);
+}
+.footer_value {
+  margin-left: 10px;
+}
+.w_100 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

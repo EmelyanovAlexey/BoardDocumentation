@@ -2,8 +2,7 @@
 import React, { useRef, useState } from 'react';
 import reactDom from 'react-dom';
 import PropTypes from 'prop-types';
-
-import { joinClassNames } from '../../Utils';
+import clsx from 'clsx';
 
 import './Modal.css';
 import { ModalContext } from './ModalContext';
@@ -20,16 +19,12 @@ function Modal({ className, title, children, onModalClose = () => {} }) {
       }}
     >
       <div
-        className={joinClassNames([
-          'modal',
-          { 'modal--hidden': !isShown },
-          // className,
-        ])}
+        className={clsx(['modal', { 'modal--hidden': !isShown }])}
         onAnimationEnd={() => {
           if (!isShown) onModalClose();
         }}
       >
-        <div className={joinClassNames(['Modal', className])}>
+        <div className={clsx(['Modal', className])}>
           <div className="Modal_header">
             <h2>{title}</h2>
             {onModalClose !== null && (

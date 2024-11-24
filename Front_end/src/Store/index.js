@@ -9,6 +9,7 @@ import { all } from 'redux-saga/effects';
 import main from './main';
 import search from './search';
 import api from './api';
+import reviews from './reviews';
 
 /**
  * Объединяет все саги из сторов
@@ -20,6 +21,7 @@ function* rootSaga(...args) {
     main.rootSaga(...args),
     search.rootSaga(...args),
     api.rootSaga(...args),
+    reviews.rootSaga(...args),
   ]);
 }
 
@@ -57,6 +59,7 @@ export default function configureStore(history, host) {
     main: main.reducer,
     search: search.reducer,
     api: api.reducer,
+    reviews: reviews.reducer,
   });
 
   const sagaMiddleware = createSagaMiddleware();

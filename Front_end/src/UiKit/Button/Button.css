@@ -1,6 +1,6 @@
 .button {
   background-color: #fff;
-  border: 0.083em solid #003c7c;
+  border: 0.083em solid var(--color-dark-2);
   border-radius: 0.3px;
   cursor: pointer;
   font-size: 0.857em;
@@ -18,12 +18,12 @@
 }
 
 .button:focus-visible {
-  outline: 0.167em solid #003c7c;
+  outline: 0.167em solid var(--color-dark-2);
   outline-offset: 0.167em;
 }
 
 .button:hover {
-  background-color: #0a3c70;
+  background-color: var(--color-dark-2);
   color: #fff;
 }
 .button:hover path {

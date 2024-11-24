@@ -5,12 +5,12 @@ export const ROUTER_LIST = [
     href: '/home',
     icon: 'Home',
   },
-  // {
-  //   id: 'order',
-  //   title: 'Заказы',
-  //   href: '/22',
-  //   icon: 'Home',
-  // },
+  {
+    id: 'reviews',
+    title: 'Отзывы',
+    href: '/reviews',
+    icon: 'Home',
+  },
   {
     id: 'documentation',
     title: 'Документация',

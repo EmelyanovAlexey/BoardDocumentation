@@ -58,6 +58,7 @@ Glyph.propTypes = {
     'Description',
     'Windows',
     'Linux',
+    'Star',
   ]).isRequired,
 
   /**

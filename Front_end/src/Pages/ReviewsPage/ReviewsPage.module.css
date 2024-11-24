@@ -1,0 +1,72 @@
+.page {
+  background-color: var(--color-dark-3);
+}
+
+.content {
+  width: calc(80%);
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.reviews {
+  margin-top: 40px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* modal */
+.modal {
+  margin-top: 20vh;
+  width: 500px;
+}
+
+.input {
+  margin-bottom: 20px;
+}
+
+.stars_icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+.stars_icon path {
+  stroke: var(--color-gray-1);
+}
+
+.stars_icon_selected path {
+  stroke: var(--color-white);
+  fill: var(--color-white);
+}
+
+.starts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.separation {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-white);
+  margin-bottom: 10px;
+}
+.modal_footer {
+  display: flex;
+  justify-content: end;
+  padding-bottom: 5px;
+}
+
+.btn_star {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn_star:hover path {
+  stroke: var(--color-white);
+}

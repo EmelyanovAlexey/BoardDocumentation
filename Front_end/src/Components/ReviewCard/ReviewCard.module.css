@@ -1,0 +1,55 @@
+.root {
+  width: 100%;
+  background-color: var(--color-dark-1);
+  padding: 20px;
+
+  border-radius: 6px;
+  border: 1px solid var(--color-gray-1);
+
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.603);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.603);
+  box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.603);
+}
+
+.body {
+  padding: 10px 10px;
+  color: var(--color-gray-2);
+}
+
+.bar {
+  align-items: center;
+  border-bottom: 0.071em solid #00000005;
+  display: flex;
+  padding: 4px 0 8px 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--color-gray-1);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  color: var(--color-white);
+}
+
+.footer {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stars_icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+.stars_icon path {
+  stroke: var(--color-gray-1);
+}
+
+.stars_icon_selected path {
+  stroke: var(--color-white);
+  fill: var(--color-white);
+}

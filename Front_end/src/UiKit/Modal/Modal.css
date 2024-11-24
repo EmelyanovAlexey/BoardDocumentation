@@ -16,9 +16,12 @@
 }
 
 .Modal {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 5px;
+  background-color: var(--color-dark-2);
+  padding: 10px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.603);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.603);
+  box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.603);
 }
 
 .Modal_header {
@@ -28,7 +31,9 @@
   margin-bottom: 15px;
 }
 .Modal_header h2 {
+  color: var(--color-white);
   margin-right: 10px;
+  font-size: 24px;
 }
 .Modal_header button {
   background-color: transparent;
@@ -40,9 +45,13 @@
   width: 20px;
   height: 20px;
 }
+.Modal_close path {
+  fill: var(--color-white);
+  stroke: var(--color-white);
+}
 
 .modal_window {
-  background-color: #fff;
+  background-color: var(--color-white);
   border-radius: 0.357em;
   box-shadow: 0 0 0.714em #0000001a;
   padding: 2.143em;

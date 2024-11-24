@@ -89,6 +89,40 @@ function HomePage() {
           </div>
         </div>
       </div>
+
+      <footer>
+        <div className={styles.footer_content}>
+          <div className={styles.w_100}>
+            <div className={clsx([styles.row, styles.w_50])}>
+              <div className={styles.footer_label}>Телефон: </div>
+              <div className={styles.footer_value}>
+                <a href="tel:+78888888888">+ 7 888 888 88 88</a>
+              </div>
+            </div>
+            <div className={clsx([styles.row, styles.w_50])}>
+              <div className={styles.footer_label}>Разработчики: </div>
+              <div className={styles.footer_value}>
+                Шитенко Алина, Бабенко Егор, Емельянов Алексей
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.w_100}>
+            <div className={clsx([styles.row, styles.w_50])}>
+              <div className={styles.footer_label}>Почта: </div>
+              <div className={styles.footer_value}>
+                <a href="mailto:pochta@mail.ru?subject=Вопрос">
+                  pochta@mail.ru
+                </a>
+              </div>
+            </div>
+            <div className={clsx([styles.row, styles.w_50])}>
+              <div className={styles.footer_label}>Компания: </div>
+              <div className={styles.footer_value}>Название компании</div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

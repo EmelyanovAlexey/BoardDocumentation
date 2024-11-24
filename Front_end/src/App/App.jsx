@@ -10,6 +10,7 @@ import DocumentationSidebar from '../Containers/DocumentationSidebar';
 
 // страницы
 import HomePageContainer from '../Pages/HomePage/HomePageContainer';
+import ReviewsPageContainer from '../Pages/ReviewsPage/ReviewsPageContainer';
 import DocumentationContainer from '../Pages/DocumentationPage';
 import InstructionUserPage from '../Pages/InstructionUserPage';
 import InstructionWorkPage from '../Pages/InstructionWorkPage';
@@ -31,6 +32,7 @@ function App() {
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>
+        <Route exact path="/reviews" render={() => <ReviewsPageContainer />} />
         <Route exact path="/home" render={() => <HomePageContainer />} />
         <Route exact path="/documentation">
           <Redirect to="/documentation/description" />
