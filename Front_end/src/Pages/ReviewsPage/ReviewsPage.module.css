@@ -70,3 +70,18 @@
 .btn_star:hover path {
   stroke: var(--color-white);
 }
+
+.loading_block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.loading {
+  width: 30px;
+  height: 30px;
+}
+
+.review {
+  margin-bottom: 15px;
+}

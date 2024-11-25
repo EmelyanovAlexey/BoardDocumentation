@@ -9,8 +9,8 @@ import ReviewsPage from './ReviewsPage';
 
 function mapStateToProps(state) {
   return {
-    contents: state.reviews.search,
-    searchText: state.reviews.text,
+    loading: state.reviews.loading,
+    reviews: state.reviews.reviews,
   };
 }
 

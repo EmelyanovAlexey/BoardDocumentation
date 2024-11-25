@@ -11,13 +11,14 @@ import Button from '../../UiKit/Button';
 import Input from '../../UiKit/Input';
 import Modal from '../../UiKit/Modal';
 import TextArea from '../../UiKit/TextArea';
+import Spinner from '../../UiKit/Spinner';
 import Panel from '../../Components/Panel';
 import Glyph from '../../Components/Glyph';
 import ReviewCard from '../../Components/ReviewCard';
 
 import styles from './ReviewsPage.module.css';
 
-function ReviewsPage({ reviews, fetchReviews, sendReview }) {
+function ReviewsPage({ loading, reviews, fetchReviews, sendReview }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [formData, setFormData] = useState(DEFAULT_DATA_FORM);
 
@@ -26,7 +27,13 @@ function ReviewsPage({ reviews, fetchReviews, sendReview }) {
   }, []);
 
   const handleSendReview = () => {
-    sendReview({ ...formData, date: new Date() });
+    sendReview({
+      name: formData.name,
+      rating: formData.rating,
+      text: formData.text,
+    });
+    setIsOpenModal(false);
+    setFormData(DEFAULT_DATA_FORM);
   };
 
   return (
@@ -80,7 +87,7 @@ function ReviewsPage({ reviews, fetchReviews, sendReview }) {
 
             <div className={styles.modal_footer}>
               <Button
-                disabled={formData.name === '' || formData.text === ''}
+                disabled={formData.name === ''}
                 onClick={() => handleSendReview()}
               >
                 Отправить
@@ -93,23 +100,28 @@ function ReviewsPage({ reviews, fetchReviews, sendReview }) {
       <div className={styles.content}>
         <Panel title="Отзывы">
           <div className={clsx([styles.row])}>
-            <div className="">/</div>
-            <Button onClick={() => setIsOpenModal(true)}>Добаыить отзыв</Button>
+            <div className="" />
+            <Button onClick={() => setIsOpenModal(true)}>Добавить отзыв</Button>
           </div>
         </Panel>
 
         <Panel className={clsx([styles.reviews])}>
-          {reviews.length === 0 && 'Отзывов не найдено'}
-          {reviews.map((review, index) => (
-            <div key={+index}>
+          {reviews.length === 0 && !loading && 'Отзывов не найдено'}
+          {reviews?.map((review, index) => (
+            <div className={styles.review} key={+index}>
               <ReviewCard
-                title={review.title}
+                title={review.name}
                 text={review.text}
                 rating={review.rating}
                 date={review.date}
               />
             </div>
           ))}
+          {loading && (
+            <div className={styles.loading_block}>
+              <Spinner className={styles.loading} />
+            </div>
+          )}
         </Panel>
       </div>
     </div>
@@ -117,6 +129,7 @@ function ReviewsPage({ reviews, fetchReviews, sendReview }) {
 }
 
 ReviewsPage.propTypes = {
+  loading: PropTypes.bool,
   reviews: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string,
@@ -130,6 +143,7 @@ ReviewsPage.propTypes = {
 };
 
 ReviewsPage.defaultProps = {
+  loading: false,
   reviews: [],
   fetchReviews: () => {},
   sendReview: () => {},

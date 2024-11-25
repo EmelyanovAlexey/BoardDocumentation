@@ -2,17 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
+import { format } from 'date-fns';
+
 import Glyph from '../Glyph';
 
 import styles from './ReviewCard.module.css';
 
-function ReviewCard({
-  className,
-  title = '',
-  text = '',
-  rating = 4,
-  date = '',
-}) {
+function ReviewCard({ className, title, text, rating, date }) {
   return (
     <div className={clsx([styles.root, className])}>
       <div className={styles.bar}>
@@ -36,7 +32,9 @@ function ReviewCard({
               />
             ))}
         </div>
-        <div className={styles.date}>{date}</div>
+        <div className={styles.date}>
+          {format(new Date(date), 'dd.MM.yyyy')}
+        </div>
       </div>
     </div>
   );

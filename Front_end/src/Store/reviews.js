@@ -56,7 +56,7 @@ export const fetchReviewsAction = createAction(FETCH_REVIEWS, () => ({
 
 export const sendReviewsAction = createAction(SEND_REVIEWS, (param) => ({
   request: {
-    url: `/new_reviews`,
+    url: `/reviews`,
     responseType: 'json',
     method: 'POST',
     data: param,
@@ -64,8 +64,8 @@ export const sendReviewsAction = createAction(SEND_REVIEWS, (param) => ({
   meta: {
     onSuccess: (response, action, store) => {
       const { dispatch } = store;
-      dispatch(setLoadingAction(false));
-      dispatch(saveContentsAction(response.data));
+      dispatch(setLoadingAction(true));
+      dispatch(fetchReviewsAction());
       dispatch(
         addStatusPageAction({
           title: 'Успешно',
