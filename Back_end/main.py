@@ -31,7 +31,7 @@ app.add_middleware(
 )
 
 # Поиск в БД по тексту
-@app.get("/search")
+@app.get("/api/search")
 async def search_articles(query: str, session: AsyncSession = Depends(get_db)):
     stmt = (
         select(pages.c.id, pages.c.title, pages.c.content)
@@ -56,7 +56,7 @@ async def search_articles(query: str, session: AsyncSession = Depends(get_db)):
     ]
 
 
-@app.get("/reviews")
+@app.get("/api/reviews")
 async def get_reviews(session: AsyncSession = Depends(get_db)):
     stmt = (
         select(reviews.c.id, reviews.c.name, reviews.c.text, reviews.c.rating, reviews.c.date)
@@ -81,7 +81,7 @@ class ReviewCreate(BaseModel):
     text: str = Field(..., min_length=0)
     rating: int = Field(..., ge=1, le=5)
 
-@app.post("/reviews")
+@app.post("/api/reviews")
 async def create_review(
     review: ReviewCreate, session: AsyncSession = Depends(get_db)
 ):
