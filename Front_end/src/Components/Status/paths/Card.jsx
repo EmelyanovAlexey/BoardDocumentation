@@ -28,12 +28,12 @@ function Status({ card, onClick }) {
   // получить цвет карты по статусу
   function getIconCard() {
     if (card.status === 'error') {
-      return <img src="../../../../SVG/error.svg" alt="icon" />;
+      return <img src="../../../Img/error.svg" alt="icon" />;
     }
     if (card.status === 'good') {
-      return <img src="../../../../SVG/good.svg" alt="icon" />;
+      return <img src="../../../Img/good.svg" alt="icon" />;
     }
-    return <img src="../../../../SVG/warning.svg" alt="icon" />;
+    return <img src="../../../Img/warning.svg" alt="icon" />;
   }
 
   useEffect(() => {

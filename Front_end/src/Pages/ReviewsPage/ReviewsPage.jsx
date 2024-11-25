@@ -57,7 +57,7 @@ function ReviewsPage({ loading, reviews, fetchReviews, sendReview }) {
             <TextArea
               className={styles.input}
               placeholder="Отзыв"
-              onChange={(text) => setFormData({ ...formData, text })}
+              changeText={(type, text) => setFormData({ ...formData, text })}
             />
 
             <div className={styles.starts}>
@@ -87,7 +87,7 @@ function ReviewsPage({ loading, reviews, fetchReviews, sendReview }) {
 
             <div className={styles.modal_footer}>
               <Button
-                disabled={formData.name === ''}
+                disabled={formData.name.replaceAll(' ', '') === ''}
                 onClick={() => handleSendReview()}
               >
                 Отправить

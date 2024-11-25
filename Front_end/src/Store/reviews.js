@@ -2,6 +2,7 @@
 import { put } from 'redux-saga/effects';
 import { createAction, createReducer } from 'redux-smart-actions';
 import { createActionType } from '../Utils';
+import { addStatusPageAction } from './main';
 
 // Store для главного экрана (списка мероприятий)
 const MODULE_NAME = 'reviews';

@@ -77,9 +77,9 @@ async def get_reviews(session: AsyncSession = Depends(get_db)):
     ]
 
 class ReviewCreate(BaseModel):
-    name: str = Field(..., min_length=1)  # Имя обязательно
-    text: str = Field(default="")  # Текст обязательно
-    rating: int = Field(..., ge=1, le=5)  # Рейтинг от 1 до 5
+    name: str = Field(..., min_length=1)
+    text: str = Field(..., min_length=0)
+    rating: int = Field(..., ge=1, le=5)
 
 @app.post("/reviews")
 async def create_review(
