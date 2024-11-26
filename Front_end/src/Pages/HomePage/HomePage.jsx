@@ -62,7 +62,7 @@ function HomePage() {
         />
 
         <div className={styles.section_conent}>
-          <div className={styles.title}>Распознование лазеров</div>
+          <div className={styles.title}>Распознавание лазеров</div>
 
           <div className={styles.color_picker}>
             <ColorPickerСircle
