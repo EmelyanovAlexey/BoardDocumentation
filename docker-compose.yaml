@@ -30,3 +30,7 @@ services:
       - ./Front_end/build:/usr/share/nginx/html
     ports: [35001:80]
     depends_on: [fastapi, react]
+
+networks:
+  localnet:    
+    driver: bridge

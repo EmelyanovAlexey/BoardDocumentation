@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable */
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
@@ -25,13 +26,13 @@ function InstructionWorkPage({ children }) {
               </li>
               <li>
                 <p>Подготовка среды</p>
-                <BlockCopy title="windows" text="pip install uv" />
-                <BlockCopy title="linux" text="uv venv --python 3.12" />
+                <BlockCopy text="pip install uv" />
+                <BlockCopy text="uv venv --python 3.12" />
               </li>
               <li>
-                <p>Активизировать окружающую среду</p>
-                <BlockCopy text=".\.venv\Scripts\activate" />
-                <BlockCopy text="source .\.venv\bin\activate" />
+                <p>Активировать среду</p>
+                <BlockCopy title="windows" text=".\.venv\Scripts\activate" />
+                <BlockCopy title="linux" text="source .\.venv\bin\activate" />
               </li>
               <li>
                 <p>Установка зависимостей</p>
