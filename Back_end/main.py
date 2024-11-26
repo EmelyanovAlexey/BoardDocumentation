@@ -30,6 +30,15 @@ app.add_middleware(
     allow_headers=["*"],  # разрешаем любые заголовки
 )
 
+class ReviewCreate(BaseModel):
+    name: str = Field(..., min_length=1)
+    text: str = Field(..., min_length=0)
+    rating: int = Field(..., ge=1, le=5)
+
+class SearchCreate(BaseModel):
+    title: str = Field(..., min_length=1)
+    content: str = Field(..., min_length=1)
+
 # Поиск в БД по тексту
 @app.get("/search")
 async def search_articles(query: str, session: AsyncSession = Depends(get_db)):
@@ -55,6 +64,19 @@ async def search_articles(query: str, session: AsyncSession = Depends(get_db)):
         for article in articles_list
     ]
 
+@app.post("/search")
+async def create_review(
+    search_data: SearchCreate, session: AsyncSession = Depends(get_db)
+):
+    stmt = insert(pages).values(
+        title=search_data.title,
+        content=search_data.content,
+    )
+    await session.execute(stmt)
+    await session.commit()
+
+    return {"message": "Review added successfully"}
+
 
 @app.get("/reviews")
 async def get_reviews(session: AsyncSession = Depends(get_db)):
@@ -75,11 +97,6 @@ async def get_reviews(session: AsyncSession = Depends(get_db)):
         }
         for review in reviews_list
     ]
-
-class ReviewCreate(BaseModel):
-    name: str = Field(..., min_length=1)
-    text: str = Field(..., min_length=0)
-    rating: int = Field(..., ge=1, le=5)
 
 @app.post("/reviews")
 async def create_review(
