@@ -19,7 +19,11 @@ from database import get_db
 # Свагер
 # http://127.0.0.1:8000/docs
 
-app = FastAPI()
+app = FastAPI(
+    docs_url="/api/docs",
+    redoc_url="/api/redoc",
+    openapi_url="/api/openapi.json"
+)
 
 # указываем список источников, которым разрешено обращаться к серверу
 app.add_middleware(
@@ -29,6 +33,10 @@ app.add_middleware(
     allow_methods=["*"],  # разрешаем любые методы (GET, POST и т.д.)
     allow_headers=["*"],  # разрешаем любые заголовки
 )
+
+@app.get("/api/openapi.json", include_in_schema=False)
+async def get_openapi():
+    return app.openapi()
 
 class ReviewCreate(BaseModel):
     name: str = Field(..., min_length=1)
@@ -64,8 +72,8 @@ async def search_articles(query: str, session: AsyncSession = Depends(get_db)):
         for article in articles_list
     ]
 
-@app.post("/search")
-async def create_review(
+@app.post("/api/search")
+async def create_search(
     search_data: SearchCreate, session: AsyncSession = Depends(get_db)
 ):
     stmt = insert(pages).values(
@@ -98,10 +106,6 @@ async def get_reviews(session: AsyncSession = Depends(get_db)):
         for review in reviews_list
     ]
 
-class ReviewCreate(BaseModel):
-    name: str = Field(..., min_length=1)
-    text: str = Field(..., min_length=0)
-    rating: int = Field(..., ge=1, le=5)
 
 @app.post("/api/reviews")
 async def create_review(
