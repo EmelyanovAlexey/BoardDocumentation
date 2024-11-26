@@ -1,6 +1,6 @@
 function createAPIHost() {
-  const apiHost = process.env.REACT_APP_API_HOST; //  window.API_URL;
-  const apiPath = process.env.REACT_APP_API_PATH;
+  const apiHost = 'http://127.0.0.1:8000'; // process.env.REACT_APP_API_HOST; //  window.API_URL;
+  const apiPath = '/api'; // process.env.REACT_APP_API_PATH;
 
   const originHost = window.location.origin;
 
