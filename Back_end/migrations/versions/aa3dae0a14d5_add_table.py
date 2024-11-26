@@ -28,7 +28,12 @@ def upgrade() -> None:
     sa.Column('date', sa.TIMESTAMP(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
-    p.bulk_insert(
+    pages_table = sa.table('pages',
+        sa.column('title', sa.String),
+        sa.column('content', sa.Text),
+    )
+
+    op.bulk_insert(
         pages_table,
         [
             {
