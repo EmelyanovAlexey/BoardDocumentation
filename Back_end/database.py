@@ -4,7 +4,7 @@ from sqlalchemy import MetaData
 
 metadata = MetaData()
 
-DATABASE_URL = "postgresql+asyncpg://postgres:1111@localhost:5432/Project"
+DATABASE_URL = "postgresql+asyncpg://postgres:1111@postgres:5432/Project"
 
 # Создаем асинхронный движок
 engine = create_async_engine(DATABASE_URL, echo=True)

@@ -40,7 +40,7 @@ class SearchCreate(BaseModel):
     content: str = Field(..., min_length=1)
 
 # Поиск в БД по тексту
-@app.get("/search")
+@app.get("/api/search")
 async def search_articles(query: str, session: AsyncSession = Depends(get_db)):
     stmt = (
         select(pages.c.id, pages.c.title, pages.c.content)
@@ -78,7 +78,7 @@ async def create_review(
     return {"message": "Review added successfully"}
 
 
-@app.get("/reviews")
+@app.get("/api/reviews")
 async def get_reviews(session: AsyncSession = Depends(get_db)):
     stmt = (
         select(reviews.c.id, reviews.c.name, reviews.c.text, reviews.c.rating, reviews.c.date)
@@ -98,7 +98,12 @@ async def get_reviews(session: AsyncSession = Depends(get_db)):
         for review in reviews_list
     ]
 
-@app.post("/reviews")
+class ReviewCreate(BaseModel):
+    name: str = Field(..., min_length=1)
+    text: str = Field(..., min_length=0)
+    rating: int = Field(..., ge=1, le=5)
+
+@app.post("/api/reviews")
 async def create_review(
     review: ReviewCreate, session: AsyncSession = Depends(get_db)
 ):
