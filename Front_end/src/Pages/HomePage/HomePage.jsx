@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { default as React, useEffect, useRef, useState } from "react";
 
 import LightBar from "../../Components/LightBar";
+import ModalFeedBack from "../../Containers/ModalFeedBack";
 
 import styles from "./HomePage.module.css";
 
@@ -29,6 +30,8 @@ function HomePage() {
 
   return (
     <div className={styles.page}>
+      <ModalFeedBack />
+
       <div className={styles.main}>
         <img
           className={styles.main_photo}

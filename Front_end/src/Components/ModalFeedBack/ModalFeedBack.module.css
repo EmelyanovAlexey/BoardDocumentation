@@ -1,0 +1,76 @@
+.root {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 20%;
+  height: 100vh;
+  background-color: var(--color-dark-1);
+  transition: 0.6s;
+}
+
+.logo {
+  position: relative;
+  background-size: cover;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+
+.logo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.list {
+  /* padding: 10px; */
+}
+
+.item_link {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  border-left: 2px solid transparent;
+  background-color: var(--color-dark-1);
+  transition: 0.3s;
+
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.item_link:hover {
+  color: var(--color-white);
+  background-color: var(--color-dark-2);
+  border-left: 6px solid var(--color-white);
+}
+.item_link:hover .icon path {
+  fill: var(--color-white);
+}
+.item_link_active {
+  border-left: 6px solid var(--color-white);
+  border-bottom: 1px solid transparent;
+  background-color: var(--color-dark-2);
+  padding-left: 14px;
+}
+.item_link_active .icon path {
+  fill: var(--color-white);
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.icon path {
+  fill: var(--color-white);
+  transition: 0.3;
+}
