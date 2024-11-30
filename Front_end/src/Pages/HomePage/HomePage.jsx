@@ -1,17 +1,15 @@
+/* eslint-disable */
 /* eslint-disable no-unused-vars */
 
-import React, { useEffect, useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
-
-import { COLOR_LAYER } from '../../Shered/const';
+import { default as React, useEffect, useRef, useState } from 'react';
 
 import LightBar from '../../Components/LightBar';
 
 import styles from './HomePage.module.css';
 
 function HomePage() {
-  const [selectedColor, setSelectedColor] = useState('red');
+  const [selectedColor, setSelectedColor] = useState('brown');
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -53,27 +51,81 @@ function HomePage() {
       </div>
 
       <div className={clsx([styles.section, styles.top_shadow])}>
-        <img
-          className={styles.fon}
-          src="../../../Img/fon_doc_1.png"
-          alt="fon_doc_1"
-        />
 
-        <div className={styles.section_conent}>
-          <div className={styles.title}>Распознавание лазеров</div>
+        <div className={styles.section_product}>
+          <div className={styles.title}>Что это такое?</div>
+          <div className={styles.description}>
+              В современном мире большинство школ имеет ограниченный бюджет для обеспечения техническим оборудованием классов. Наш продукт помогает сократить закупки подобного оборудования минимум в 3 раза. Программа позволяет взаимодействовать с программным обеспечением и рисовать на однотонной рабочей поверхности с помощью лазерной указки.
+          </div>
+
+          <div className={styles.advantages}>
+            <div className={styles.advantage}>
+              <h2>Экономия средств</h2>
+              <p>При закупке оборудования во все школы наш продукт экономит 11.5 млрд. рублей по сравнению со смарт-досками</p>
+            </div>
+
+            <div className={styles.advantage}>
+              <h2>7 дней</h2>
+              <p>- бесплатный тестовый период. Если вам не понравится товар, мы вернем вам деньги.</p>
+            </div>
+
+            <div className={styles.advantage}>
+              <h2>Интересные уроки</h2>
+              <p>Использование лазерной указки для взаимодействия с доской привлечет даже самых спящих учеников!</p>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.section_content}>
+          <div className={styles.title}>Как это работает?</div>
 
           <div className={styles.color_picker}>
-            <ColorPickerСircle
-              list={COLOR_LAYER}
-              selected={selectedColor}
-              onClick={(color) => setSelectedColor(color.id)}
-            />
+
+            <div className={styles.instruction_block}>
+                <div className={styles.photo}>
+                  <img
+                    src="../../../Img/instructionMenu.png"
+                    alt="instructionMenu"
+                  />
+                </div>
+                <div className={styles.instruction_text}>
+                  Запускай приложение и нажимай <span className={styles.yellow_text}>“Режим рисования”</span>.
+                </div>
+            </div>
+
+            <div className={styles.instruction_block}>
+                <div className={styles.instruction_text}>
+                  В настройках выбирай нужный <span className={styles.yellow_text}>цвет</span> лазера.
+                </div>
+                <div className={styles.photo}>
+                  <img
+                    src="../../../Img/instructionSettings.png"
+                    alt="instructionSettings"
+                  />
+                </div>
+            </div>
+
+            <div className={styles.instruction_block}>
+              <video
+                  className={styles.photo}
+                  src="../../../Video/demoVideo1.mp4"
+                  autoPlay
+                  muted
+                  loop
+                >
+                  <track
+                    kind="captions"
+                    src="../../../Video/demoVideo1.mp4"
+                    default
+                  />
+                </video>
+                <div className={styles.instruction_text}>
+                  Наведи свой лазер на экран проектора и <span className={styles.yellow_text}>рисуй на нем</span> движением руки!
+                </div>
+            </div>
+
             <LightBar
               className={clsx([styles.layer, styles.layer_1])}
-              color={selectedColor}
-            />
-            <LightBar
-              className={clsx([styles.layer, styles.layer_2])}
               color={selectedColor}
             />
             <LightBar
@@ -92,9 +144,9 @@ function HomePage() {
         <div className={styles.footer_content}>
           <div className={styles.w_100}>
             <div className={clsx([styles.row, styles.w_50])}>
-              <div className={styles.footer_label}>Телефон: </div>
+              <div className={styles.footer_label}>Telegram: </div>
               <div className={styles.footer_value}>
-                <a href="tel:+78888888888">+ 7 888 888 88 88</a>
+              <a href="tg://resolve?domain=alincnl">@alincnl</a>
               </div>
             </div>
             <div className={clsx([styles.row, styles.w_50])}>
@@ -109,14 +161,14 @@ function HomePage() {
             <div className={clsx([styles.row, styles.w_50])}>
               <div className={styles.footer_label}>Почта: </div>
               <div className={styles.footer_value}>
-                <a href="mailto:pochta@mail.ru?subject=Вопрос">
-                  pochta@mail.ru
+                <a href="mailto:e.babenko1@g.nsu.ru?subject=Вопрос">
+                  e.babenko1@g.nsu.ru
                 </a>
               </div>
             </div>
             <div className={clsx([styles.row, styles.w_50])}>
-              <div className={styles.footer_label}>Компания: </div>
-              <div className={styles.footer_value}>Название компании</div>
+              <div className={styles.footer_label}>Команда: </div>
+              <div className={styles.footer_value}>BoardDrawer</div>
             </div>
           </div>
         </div>
