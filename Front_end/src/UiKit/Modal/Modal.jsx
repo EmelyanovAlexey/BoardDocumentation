@@ -1,16 +1,15 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useRef, useState } from 'react';
-import reactDom from 'react-dom';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import React, { useRef, useState } from "react";
+import reactDom from "react-dom";
+import PropTypes from "prop-types";
+import clsx from "clsx";
 
-import './Modal.css';
-import { ModalContext } from './ModalContext';
-import Glyph from '../Glyph';
+import "./Modal.css";
+import { ModalContext } from "./ModalContext";
+import Glyph from "../Glyph";
 
 function Modal({ className, title, children, onModalClose = () => {} }) {
   const [isShown, setIsShown] = useState(true);
-  const modalAreaRef = useRef(document.querySelector('#root_modals'));
+  const modalAreaRef = useRef(document.querySelector("#root_modals"));
 
   return reactDom.createPortal(
     <ModalContext.Provider
@@ -19,12 +18,12 @@ function Modal({ className, title, children, onModalClose = () => {} }) {
       }}
     >
       <div
-        className={clsx(['modal', { 'modal--hidden': !isShown }])}
+        className={clsx(["modal", { "modal--hidden": !isShown }])}
         onAnimationEnd={() => {
           if (!isShown) onModalClose();
         }}
       >
-        <div className={clsx(['Modal', className])}>
+        <div className={clsx(["Modal", className])}>
           <div className="Modal_header">
             <h2>{title}</h2>
             {onModalClose !== null && (
@@ -38,7 +37,7 @@ function Modal({ className, title, children, onModalClose = () => {} }) {
         </div>
       </div>
     </ModalContext.Provider>,
-    modalAreaRef.current,
+    modalAreaRef.current
   );
 }
 

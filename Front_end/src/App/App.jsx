@@ -1,23 +1,23 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 
 // контейнеры
-import StatusContainer from '../Containers/StatusContainer';
-import Menu from '../Components/Menu';
-import DocumentationSidebar from '../Containers/DocumentationSidebar';
+import StatusContainer from "../Containers/StatusContainer";
+import Menu from "../Components/Menu";
+import DocumentationSidebar from "../Containers/DocumentationSidebar";
 
 // страницы
-import HomePageContainer from '../Pages/HomePage/HomePageContainer';
-import ReviewsPageContainer from '../Pages/ReviewsPage/ReviewsPageContainer';
-import DocumentationContainer from '../Pages/DocumentationPage';
-import InstructionUserPage from '../Pages/InstructionUserPage';
-import InstructionWorkPage from '../Pages/InstructionWorkPage';
-import SearchPageContainer from '../Pages/SearchPage/SearchPageContainer';
-import ApiPageContainer from '../Pages/ApiPage/ApiPageContainer';
+import HomePageContainer from "../Pages/HomePage/HomePageContainer";
+import ReviewsPageContainer from "../Pages/ReviewsPage/ReviewsPageContainer";
+import DocumentationContainer from "../Pages/DocumentationPage";
+import InstructionUserPage from "../Pages/InstructionUserPage";
+import InstructionWorkPage from "../Pages/InstructionWorkPage";
+import SearchPageContainer from "../Pages/SearchPage/SearchPageContainer";
+import ApiPageContainer from "../Pages/ApiPage/ApiPageContainer";
 
-import styles from './App.module.css';
+import styles from "./App.module.css";
 
 // export NODE_OPTIONS=--openssl-legacy-provider
 // "homepage": ".",
@@ -26,7 +26,8 @@ function App() {
     <BrowserRouter basename="/">
       <StatusContainer />
 
-      <Menu />
+      {/* отключил навигацию для на время лендинга */}
+      {/* <Menu />  */}
 
       <div className={styles.pages}>
         <Route exact path="/">
