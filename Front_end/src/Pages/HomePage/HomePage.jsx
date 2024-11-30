@@ -7,8 +7,6 @@ import clsx from 'clsx';
 import { COLOR_LAYER } from '../../Shered/const';
 
 import LightBar from '../../Components/LightBar';
-import Panel from '../../Components/Panel';
-import ColorPickerСircle from '../../Components/ColorPickerСircle';
 
 import styles from './HomePage.module.css';
 
