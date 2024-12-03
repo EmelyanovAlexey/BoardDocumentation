@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
-import { updatePageAction } from '../../Store/main';
+import { connect } from "react-redux";
+import { setIsOpenReturnFeedBackAction } from "../../Store/main";
 
-import HomePage from './HomePage';
+import HomePage from "./HomePage";
 
 function mapStateToProps() {
   return {};
@@ -9,8 +9,8 @@ function mapStateToProps() {
 
 function mapDispatchToProps(dispatch) {
   return {
-    updateTime: (data) => {
-      dispatch(updatePageAction(data));
+    setIsOpenReturnFeedBack: (data) => {
+      dispatch(setIsOpenReturnFeedBackAction(data));
     },
   };
 }

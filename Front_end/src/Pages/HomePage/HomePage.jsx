@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import { default as React, useEffect, useRef, useState } from "react";
 
 import LightBar from "../../Components/LightBar";
@@ -9,7 +10,7 @@ import ModalFeedBack from "../../Containers/ModalFeedBack";
 
 import styles from "./HomePage.module.css";
 
-function HomePage() {
+function HomePage({ setIsOpenReturnFeedBack }) {
   const [selectedColor, setSelectedColor] = useState("brown");
   const videoRef = useRef(null);
 
@@ -71,7 +72,11 @@ function HomePage() {
             </h1>
 
             <div className={styles.main_info_btn}>
-              <button className={styles.main_btn} type="button">
+              <button
+                className={styles.main_btn}
+                type="button"
+                onClick={() => setIsOpenReturnFeedBack(true)}
+              >
                 Оставить заявку
               </button>
             </div>
@@ -223,8 +228,12 @@ function HomePage() {
   );
 }
 
-HomePage.propTypes = {};
+HomePage.propTypes = {
+  setIsOpenReturnFeedBack: PropTypes.func,
+};
 
-HomePage.defaultProps = {};
+HomePage.defaultProps = {
+  setIsOpenReturnFeedBack: () => {},
+};
 
 export default HomePage;

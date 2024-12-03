@@ -37,3 +37,14 @@ reviews = Table(
     Column("date", TIMESTAMP, default=datetime.utcnow),
     CheckConstraint("rating >= 1 AND rating <= 5", name="check_rating_range")
 )
+
+feedBacks = Table(
+    "feedBack",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("name", String, nullable=False),
+    Column("text", String, nullable=True),
+    Column("email", String, nullable=False),
+    Column("telephone", String, nullable=False),
+    Column("date", TIMESTAMP, default=datetime.utcnow),
+)

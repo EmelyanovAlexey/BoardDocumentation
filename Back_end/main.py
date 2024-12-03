@@ -10,7 +10,7 @@ from jose import jwt, ExpiredSignatureError, JWTError
 from datetime import datetime, timezone
 
 # Models
-from Modele.models import pages, reviews
+from Modele.models import pages, reviews, feedBacks
 from database import get_db
 
 # Старт
@@ -42,6 +42,13 @@ class ReviewCreate(BaseModel):
     name: str = Field(..., min_length=1)
     text: str = Field(..., min_length=0)
     rating: int = Field(..., ge=1, le=5)
+
+
+class FeedBackCreate(BaseModel):
+    name: str = Field(..., min_length=0)
+    text: str = Field(..., min_length=0)
+    email: str = Field(..., min_length=0)
+    telephone: str = Field(..., min_length=0)
 
 class SearchCreate(BaseModel):
     title: str = Field(..., min_length=1)
@@ -115,6 +122,22 @@ async def create_review(
         name=review.name,
         text=review.text,
         rating=review.rating,
+        date=datetime.utcnow(),
+    )
+    await session.execute(stmt)
+    await session.commit()
+
+    return {"message": "Review added successfully"}
+
+@app.post("/api/feedBack")
+async def create_review(
+    feedBack: FeedBackCreate, session: AsyncSession = Depends(get_db)
+):
+    stmt = insert(feedBacks).values(
+        name=feedBack.name,
+        text=feedBack.text,
+        telephone=feedBack.telephone,
+        email=feedBack.email,
         date=datetime.utcnow(),
     )
     await session.execute(stmt)

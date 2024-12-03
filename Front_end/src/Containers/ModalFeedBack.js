@@ -1,19 +1,25 @@
 /* eslint-disable no-unused-vars */
 import { connect } from "react-redux";
-import { setTextAction } from "../Store/search";
+import {
+  setIsOpenReturnFeedBackAction,
+  sendFeedBackAction,
+} from "../Store/main";
 
 import ModalFeedBack from "../Components/ModalFeedBack";
 
 function mapStateToProps(state) {
   return {
-    textSave: state.search.text,
+    isOpen: state.main.isOpenReturnFeedBack,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    setTextAction: (data) => {
-      dispatch(setTextAction(data));
+    setIsOpen: (data) => {
+      dispatch(setIsOpenReturnFeedBackAction(data));
+    },
+    sendData: (data) => {
+      dispatch(sendFeedBackAction(data));
     },
   };
 }

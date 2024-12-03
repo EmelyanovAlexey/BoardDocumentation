@@ -4,15 +4,18 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
+import { DEFAULT_DATA_FORM } from "./constants";
+
 import Modal from "../../UiKit/Modal";
 import Input from "../../UiKit/Input";
 import TextArea from "../../UiKit/TextArea";
 import Button from "../../UiKit/Button";
+import InputMask from "react-input-mask";
 
 import styles from "./ModalFeedBack.module.css";
 
 function ModalFeedBack({ isOpen, setIsOpen, sendData }) {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState(DEFAULT_DATA_FORM);
 
   if (!isOpen) {
     return "";
@@ -23,7 +26,7 @@ function ModalFeedBack({ isOpen, setIsOpen, sendData }) {
       title="Оставить заявку"
       className={styles.modal}
       onModalClose={() => {
-        setIsOpenModal(false);
+        setIsOpen(false);
         setFormData(DEFAULT_DATA_FORM);
       }}
     >
@@ -31,19 +34,25 @@ function ModalFeedBack({ isOpen, setIsOpen, sendData }) {
         <Input
           className={styles.input}
           placeholder="Имя"
-          onChange={(text) => setFormData({ ...formData, name: text })}
+          onChange={(name) => setFormData({ ...formData, name })}
         />
 
-        <Input
-          className={styles.input}
+        <InputMask
+          className={styles.input_mask}
           placeholder="Телефон"
-          onChange={(text) => setFormData({ ...formData, name: text })}
+          mask="+7 (999) 999 99 99"
+          onChange={(telephone) =>
+            setFormData({
+              ...formData,
+              telephone: telephone.currentTarget.value,
+            })
+          }
         />
 
         <Input
           className={styles.input}
           placeholder="Почта"
-          onChange={(text) => setFormData({ ...formData, name: text })}
+          onChange={(email) => setFormData({ ...formData, email })}
         />
 
         <TextArea
@@ -55,12 +64,7 @@ function ModalFeedBack({ isOpen, setIsOpen, sendData }) {
         <div className={styles.separation} />
 
         <div className={styles.modal_footer}>
-          <Button
-            disabled={formData.name.replaceAll(" ", "") === ""}
-            onClick={() => handleSendReview()}
-          >
-            Отправить
-          </Button>
+          <Button onClick={() => sendData(formData)}>Отправить</Button>
         </div>
       </div>
     </Modal>
